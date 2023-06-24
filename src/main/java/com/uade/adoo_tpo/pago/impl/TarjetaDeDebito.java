@@ -1,4 +1,10 @@
 package com.uade.adoo_tpo.pago.impl;
 
-public class TarjetaDeDebito {
+import com.uade.adoo_tpo.pago.MedioDePago;
+
+public class TarjetaDeDebito extends MedioDePago {
+    @Override
+    public void pagar() {
+
+    }
 }

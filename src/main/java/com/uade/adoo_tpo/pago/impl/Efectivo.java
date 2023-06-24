@@ -1,4 +1,11 @@
 package com.uade.adoo_tpo.pago.impl;
 
-public class Efectivo {
+import com.uade.adoo_tpo.pago.MedioDePago;
+
+public class Efectivo extends MedioDePago {
+
+    @Override
+    public void pagar() {
+
+    }
 }

@@ -4,8 +4,9 @@ import com.uade.adoo_tpo.domain.Reservas;
 import com.uade.adoo_tpo.estadoReserva.Estado;
 
 public class Cancelada implements Estado {
+
     @Override
-    public void reservar(Reservas reservas) {
+    public void cancelar(Reservas reservas) {
 
     }
 
@@ -13,4 +14,5 @@ public class Cancelada implements Estado {
     public void pagar(Reservas reservas) {
 
     }
+
 }

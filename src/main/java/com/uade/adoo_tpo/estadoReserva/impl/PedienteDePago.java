@@ -5,7 +5,7 @@ import com.uade.adoo_tpo.estadoReserva.Estado;
 
 public class PedienteDePago implements Estado {
     @Override
-    public void reservar(Reservas reservas) {
+    public void cancelar(Reservas reservas) {
 
     }
 

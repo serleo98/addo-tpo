@@ -4,9 +4,11 @@ import com.uade.adoo_tpo.domain.enums.HabitacionExtras;
 import com.uade.adoo_tpo.domain.enums.TipoDehabitacion;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class Habitacion {
     private int cantidadDePersonas;
     private TipoDehabitacion tipoDehabitacion;
-    private HabitacionExtras extras;
+    private List<HabitacionExtras> extras;
 }

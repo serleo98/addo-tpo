@@ -21,6 +21,7 @@ public class Reservas {
     private Estado estado;
     private MedioDePago medioDePago;
     private BigDecimal monto;
+    private Factura factura;
 
 
     public void pagar(){

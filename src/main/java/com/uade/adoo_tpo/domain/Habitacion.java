@@ -8,6 +8,7 @@ import java.util.List;
 
 @Data
 public class Habitacion {
+    private  int idHAbitacion;
     private int cantidadDePersonas;
     private TipoDehabitacion tipoDehabitacion;
     private List<HabitacionExtras> extras;

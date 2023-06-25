@@ -7,7 +7,7 @@ public class Pagada implements Estado {
 
     @Override
     public void cancelar(Reservas reservas) {
-
+        reservas.setEstado(new Cancelada());
     }
 
     @Override

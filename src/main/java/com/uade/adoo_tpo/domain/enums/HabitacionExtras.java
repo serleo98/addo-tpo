@@ -4,6 +4,6 @@ public enum HabitacionExtras {
     SERVICIO,
     DESPERTADOR,
     TV,
-    NTERNET,
+    INTERNET,
     MINI_BAR;
 }

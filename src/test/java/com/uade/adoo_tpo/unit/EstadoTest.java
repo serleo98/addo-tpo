@@ -17,6 +17,13 @@ public class EstadoTest {
         Estado estado = new PedienteDePago();
         estado.pagar(reservas);
 
-        assert reservas.getEstado() instanceof Cancelada;
+        System.out.println("El estado de la reserva es cancelado?");
+        System.out.println( reservas.getEstado() instanceof Cancelada);
+
+
+        System.out.println("Cancelando reserva...");
+        estado.cancelar(reservas);
+        System.out.println("El estado de la reserva es cancelado?");
+        System.out.println( reservas.getEstado() instanceof Cancelada);
     }
 }

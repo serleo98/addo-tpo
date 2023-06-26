@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
 @Data
 public class Sistema {
 
-    private List<Habitacion> listaHabitacion;
-    private List<Reservas> listaReservas;
-    private List<Cliente> listaClientes;
+    private List<Habitacion> listaHabitacion = new ArrayList<>();
+    private List<Reservas> listaReservas = new ArrayList<>();
+    private List<Cliente> listaClientes = new ArrayList<>();
 
     public Sistema(List<Habitacion> habitacion) {
         this.listaHabitacion = habitacion;
@@ -127,16 +127,9 @@ public class Sistema {
                              String email,
                              String contactoDePreferencia){
 
-        Cliente newCliente = Cliente.builder()
-                .nombre(nombre)
-                .apellido(apellido)
-                .contactoDePreferencia(contactoDePreferencia)
-                .email(email)
-                .phone(phone)
-                .doc(doc)
-                .build();
+        Cliente cliente = new Cliente(nombre,apellido,doc,phone,email,contactoDePreferencia);
+        listaClientes.add(cliente);
 
-        listaClientes.add(newCliente);
     }
 
     public Set<Map> reporteDeDisponibilidad(){

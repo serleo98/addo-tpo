@@ -17,7 +17,7 @@ import static com.uade.adoo_tpo.domain.enums.TipoDehabitacion.HABITACION;
 import static com.uade.adoo_tpo.domain.enums.TipoDehabitacion.SUITE;
 
 @SpringBootTest
-class AdooTpoApplicationTests {
+class BuscarHabitacionesTest {
 
     Habitacion habitacion = new Habitacion();
     Habitacion habitacion2 = new Habitacion();

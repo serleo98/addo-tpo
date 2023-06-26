@@ -4,7 +4,7 @@ import com.uade.adoo_tpo.domain.Cliente;
 import com.uade.adoo_tpo.notificacion.Notificacion;
 
 public class SMS extends Notificacion {
-    public void enviarNotificacion(Cliente cliente) {
-        System.out.println("Cliente notificado mediante SMS");
+    public void enviarNotificacion(Cliente cliente, String msg) {
+        System.out.println("Cliente notificado mediante SMS, msg: "+msg);
     }
 }

@@ -13,21 +13,21 @@ public class NotifacionTest {
     public void Mailtest(){
         Notificacion mail = new Mail();
         Cliente cliente = new Cliente();
-        mail.enviarNotificacion(cliente);
+        mail.enviarNotificacion(cliente,"msg test");
     }
 
     @Test
     public void Whatsapptest(){
         Notificacion whatsapp = new Whatsapp();
         Cliente cliente = new Cliente();
-        whatsapp.enviarNotificacion(cliente);
+        whatsapp.enviarNotificacion(cliente,"msg test");
     }
 
     @Test
     public void SMStest(){
         Notificacion SMS = new SMS();
         Cliente cliente = new Cliente();
-        SMS.enviarNotificacion(cliente);
+        SMS.enviarNotificacion(cliente,"msg test");
     }
 
 }

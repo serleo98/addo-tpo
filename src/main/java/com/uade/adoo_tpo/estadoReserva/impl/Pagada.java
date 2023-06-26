@@ -4,6 +4,8 @@ import com.uade.adoo_tpo.domain.Factura;
 import com.uade.adoo_tpo.domain.Reservas;
 import com.uade.adoo_tpo.estadoReserva.Estado;
 
+import java.time.LocalDateTime;
+
 public class Pagada implements Estado {
 
     @Override
@@ -17,6 +19,9 @@ public class Pagada implements Estado {
     }
 
     public void generarFactura(Reservas reservas){
-        reservas.setFactura(new Factura());
+        reservas.setFactura(Factura.builder()
+                .fechaPago(LocalDateTime.now())
+                .monto(reservas.getMontoWithPolitica())
+                .build());
     }
 }

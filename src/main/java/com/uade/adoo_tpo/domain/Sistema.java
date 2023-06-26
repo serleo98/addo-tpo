@@ -5,11 +5,15 @@ import com.uade.adoo_tpo.domain.enums.HabitacionExtras;
 import com.uade.adoo_tpo.domain.enums.TipoDehabitacion;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
 public class Sistema {
+
     private List<Habitacion> listaHabitacion;
+    private List<Reservas> listaReservas;
+    private List<Reservas> listaClientes;
 
     public Sistema(List<Habitacion> habitacion) {
         this.listaHabitacion = habitacion;
@@ -87,5 +91,28 @@ public class Sistema {
             }
 
         }
+    }
+
+    public void reservar(Cliente cliente,
+                         Habitacion habitacion,
+                         LocalDateTime checkin,
+                         LocalDateTime checkOut){
+        Reservas reserva = Reservas.builder()
+                .cliente(cliente)
+                .habitacion(habitacion)
+                .checkIn(checkin)
+                .checkOut(checkOut)
+                .build();
+
+        listaReservas.add(reserva);
+    }
+
+    public void cancelarReseva(Reservas reserva){
+        reserva.cancelar();
+        listaReservas.add(reserva);
+    }
+
+    public void pagar(Reservas reservas){
+        reservas.pagar();
     }
 }

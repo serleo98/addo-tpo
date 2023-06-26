@@ -10,14 +10,14 @@ public class PoliticaDeMontoTest {
     @Test
     public void DiasDeAnticipacionTest(){
         PoliticaDeMonto dias = new DiasDeAnticipacion();
-        double result = dias.calcularCosto("15 dias",100);
+        double result = dias.calcularCosto(100);
         assert result == 100 * 0.85;
     }
 
     @Test
     public void MesesDeAnticipacionTest(){
         PoliticaDeMonto meses = new MesesDeAnticipacion();
-        double result = meses.calcularCosto("15 dias",100);
+        float result = meses.calcularCosto(100);
         assert result == 100 * 0.80;
     }
 

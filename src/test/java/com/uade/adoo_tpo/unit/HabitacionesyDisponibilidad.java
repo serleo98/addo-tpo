@@ -19,10 +19,10 @@ public class HabitacionesyDisponibilidad {
     Habitacion habitacion4 = new Habitacion();
     Habitacion habitacion5 = new Habitacion();
     //RESERVAS
-    Reservas reserva1 = new Reservas();
-    Reservas reserva2 = new Reservas();
-    Reservas reserva3 = new Reservas();
-    Reservas reserva4 = new Reservas();
+    Reservas reserva1 =  Reservas.builder().build();
+    Reservas reserva2 = Reservas.builder().build();
+    Reservas reserva3 = Reservas.builder().build();
+    Reservas reserva4 = Reservas.builder().build();
 
 
     @BeforeEach

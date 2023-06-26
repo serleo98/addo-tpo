@@ -11,6 +11,8 @@ public class PedienteDePago implements Estado {
 
     @Override
     public void pagar(Reservas reservas) {
+
         reservas.setEstado(new Pagada());
+        ((Pagada)reservas.getEstado()).generarFactura(reservas);
     }
 }

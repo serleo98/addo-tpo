@@ -13,7 +13,7 @@ public class EstadoTest {
 
     @Test
     public void test1(){
-        Reservas reservas = new Reservas();
+        Reservas reservas =  Reservas.builder().build();
         Estado estado = new PedienteDePago();
         estado.pagar(reservas);
 

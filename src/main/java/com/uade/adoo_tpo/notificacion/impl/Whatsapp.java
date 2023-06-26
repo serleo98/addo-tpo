@@ -4,7 +4,7 @@ import com.uade.adoo_tpo.domain.Cliente;
 import com.uade.adoo_tpo.notificacion.Notificacion;
 
 public class Whatsapp extends Notificacion {
-    public void enviarNotificacion(Cliente cliente) {
-        System.out.println("Cliente notificado mediante Whatsapp");
+    public void enviarNotificacion(Cliente cliente, String msg) {
+        System.out.println("Cliente notificado mediante Whatsapp, msg: "+msg);
     }
 }

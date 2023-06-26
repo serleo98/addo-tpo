@@ -1,8 +1,10 @@
 package com.uade.adoo_tpo.domain;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class Cliente {
     private String nombre;
     private String apellido;

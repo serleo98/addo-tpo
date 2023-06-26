@@ -6,17 +6,21 @@ import com.uade.adoo_tpo.domain.enums.TipoDehabitacion;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Data
 public class Sistema {
 
     private List<Habitacion> listaHabitacion;
     private List<Reservas> listaReservas;
-    private List<Reservas> listaClientes;
+    private List<Cliente> listaClientes;
 
     public Sistema(List<Habitacion> habitacion) {
         this.listaHabitacion = habitacion;
+    }
+
+    public Sistema() {
     }
 
     public void buscarHabitacion(String criterio) {
@@ -114,5 +118,47 @@ public class Sistema {
 
     public void pagar(Reservas reservas){
         reservas.pagar();
+    }
+
+    public void crearCliente(String nombre,
+                             String apellido,
+                             String doc,
+                             String phone,
+                             String email,
+                             String contactoDePreferencia){
+
+        Cliente newCliente = Cliente.builder()
+                .nombre(nombre)
+                .apellido(apellido)
+                .contactoDePreferencia(contactoDePreferencia)
+                .email(email)
+                .phone(phone)
+                .doc(doc)
+                .build();
+
+        listaClientes.add(newCliente);
+    }
+
+    public Set<Map> reporteDeDisponibilidad(){
+
+        Set<Map> disponibilidad = new LinkedHashSet<>();
+        List<Reservas> reservadas = listaReservas.stream().filter(r-> Objects.nonNull(r.getFactura())).collect(Collectors.toList());
+
+        reservadas.forEach(r->{
+                disponibilidad.add(new HashMap<String,Object>(){{
+                    put("estado","reservado");
+                    put("habitacion",r.getHabitacion());
+                }});
+        });
+
+        listaHabitacion.forEach(h->{
+            disponibilidad.add(new HashMap<String,Object>(){{
+                put("estado","disponible");
+                put("habitacion",h);
+            }});
+        });
+
+
+        return disponibilidad;
     }
 }
